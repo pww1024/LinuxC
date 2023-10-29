@@ -1,6 +1,6 @@
 # stdio
 
-I/O : input & output ,是一切实现的基础
+I/O : input & output, 是一切实现的基础
     stdio标准IO
     sysio系统调用IO
 

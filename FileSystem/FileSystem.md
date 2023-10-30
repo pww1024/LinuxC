@@ -1,11 +1,13 @@
 # FileSystem
 
-类ls的实现，如myls -l -a -i -n
+本章目标:类ls的实现，如myls -l -a -i -n 
 
 一.目录和文件
 
 1、获取文件属性
-    stat,fstat,lstat
+    stat:通过文件路径获取 属性,面对符号链接文件时获取的是所指向的目标文件
+    fstat:通过文件描述符获取属性
+    lstat:面对符号链接文件时获取的是符号链接文件的属性
 
 2、文件访问权限
     st_mode是一个16位的`位图`,用于表示文件类型,文件访问权限,及特殊权限位
@@ -57,3 +59,60 @@ extra:
 
     tags
     vim -t size_t
+
+二.系统数据文件和信息
+
+1 /etc/passwd
+	getpwuid()
+	getpwnam()
+2 /etc/group
+	getgrgid()
+	getgrgrnam()
+3 /etc/shadow
+	getspnam()
+	crypt()
+	getpass()
+
+extra:
+    su -切换到root用户
+
+4.时间戳:time_t     char *      struct tm
+    time()
+    gmtime()
+    localtime()
+    mktime()
+    strftime()
+
+三.进程环境
+
+1 main函数
+    int main(int argc, char *argv[])
+
+2 * 进程的终止 (背到非常熟练)
+	5个正常终止3个异常终止
+	正常终止
+		从main函数返回
+		调用exit
+		调用_exit或_Exit
+		最后一个线程从其启动例程返回
+	异常终止
+		调用abort
+		接到一个信号并终止
+		最后一个线程对其取消请求做出响应
+	atexit():钩子函数
+
+3 命令行参数的分析
+	getopt()
+	getopt_long()
+
+4 环境变量
+
+5 C程序的存储空间布局
+
+6 库
+
+7 函数跳转
+
+8 资源的获取及应用
+
+

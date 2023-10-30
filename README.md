@@ -1,4 +1,4 @@
-# LinuxC
+# LinuxC learning notes
 
 Reference:
 APUE 

@@ -1,10 +1,14 @@
-0.ps
-    ps axm
-    ps axf
-    ps ax -L
-
-1.进程标识符pid
-
+ 1.进程标识符pid
+    
+    类型pid_t
+    传统意义上是一个16位的有符号整型数
+    命令ps
+        ps axm
+        ps axf
+        ps ax -L
+    进程号是顺次向下使用
+    getpid();
+    getppid();
 
 
 2.进程的产生

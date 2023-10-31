@@ -1,13 +1,14 @@
 #include<stdio.h>
 #include<unistd.h>
 #include<stdlib.h>
+#include <sys/types.h>
 
 int main()
 {
     pid_t pid;
     pid = fork();
 
-    printf("begin\n");
+    printf("[%d]:begin\n", getpid());
 
     if(pid < 0)
     {

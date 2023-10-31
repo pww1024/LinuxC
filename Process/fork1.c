@@ -10,6 +10,8 @@ int main()
 
     printf("[%d]:begin\n", getpid());
 
+    fflush(NULL);
+
     if(pid < 0)
     {
         perror("fork error");

@@ -95,6 +95,7 @@ extra:
 		调用exit
 		调用_exit或_Exit
 		最后一个线程从其启动例程返回
+        最后一个线程调用pthread_exit
 	异常终止
 		调用abort
 		接到一个信号并终止
@@ -102,17 +103,47 @@ extra:
 	atexit():钩子函数
 
 3 命令行参数的分析
-	getopt()
+	int getopt(int argc, char * const argv[],const char *optstring);
 	getopt_long()
 
+    extern char *optarg;
+    extern int optind, opterr, optopt;
+
 4 环境变量
+    !export
+    KEY = VALUE
+
+    LANG=en
+    date的变化
+
+    全局变量 environ
+    extern char ** environ;
+
+    getenv("PATH");
+    setenv  // 释放原先的内存,malloc出一块新的空间,指针指向他
+    putenv
 
 5 C程序的存储空间布局
+    p127
+    !pmap `process id`
 
 6 库
+    动态库 .a
+    静态库 .so
+    手工装载库
+    dlopen();
+    dlclose();
+    dlerror();
+
 
 7 函数跳转
+    int setjmp(jmp_buf env);
+    void longjmp(jmp_buf env, int val);
+
 
 8 资源的获取及应用
+    int getrlimit(int resource, struct rlimit *rlim);
+    int setrlimit(int resource, const struct rlimit *rlim);
+
 
 

@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "*.py": "python",
+        "stdlib.h": "c",
+        "getopt.h": "c",
+        "unistd.h": "c"
+    }
+}

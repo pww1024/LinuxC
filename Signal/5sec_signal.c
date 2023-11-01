@@ -19,9 +19,11 @@ static void alarm_handler(int signo)
 int main()
 {
     int64_t count = 0;
-    alarm(5);
 
     signal(SIGALRM,alarm_handler);
+    // signal必须在alarm之前
+    alarm(5);
+    
     while(loop) // 若不加volatile修饰，这里会被优化成while(1)
     {
         count++;

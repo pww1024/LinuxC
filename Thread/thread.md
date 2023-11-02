@@ -26,10 +26,27 @@
 栈的清理
     pthread_cleanup_push();  // 挂钩
     pthread_cleanup_pop();  // 取钩
+    这两个是宏,必须成对出现,多少个push就需要多少个pop
 
 线程的取消选项
+    pthread_cancel(); // 0 or errno
+    取消有两种状态:允许和不允许
+        允许取消又分为:异步cancel,推迟cancel(default)->推迟至cancel点
+            cancel点:POSIX定义的cancel点,都是可能引发阻塞的系统调用
+                pthread_setcancelstate();设置是否允许取消
+                pthread_setcanceltype();设置取消方式
+                pthread_testcancel():本函数什么都不做,就是一个取消点
+
+线程分离
+    pthread_detach();   // 已经detach不能join,报错
 
 3.线程同步
+    互斥量: pthread_mutex_t
+        pthread_mutex_init();
+        pthread_mutex_destroy();
+        pthread_mutex_lock();
+        pthread_mutex_trylock();
+        pthread_mutex_unlock();
 
 4.线程属性
 线程同步的属性

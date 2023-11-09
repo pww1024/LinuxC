@@ -44,7 +44,7 @@
 9.进程时间
 
 10.守护进程 daemonize
-    fork一个程序,dup2重定向3个流close,setsid脱离终端,改变工作目录(防止挂载时显示device busy)
+    fork一个程序,dup2重定向3个流close,setsid脱离终端,改变工作目录(防止umount卸载时显示device busy)
 
     tail -f /tmp/out
 
